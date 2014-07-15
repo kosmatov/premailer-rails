@@ -42,6 +42,7 @@ class Premailer
       # Returns true if the message itself has a content type of text/html, thus
       # it does not contain other parts such as alternatives and attachments.
       def pure_html_message?
+        return unless message.content_type
         message.content_type.include?('text/html')
       end
 
